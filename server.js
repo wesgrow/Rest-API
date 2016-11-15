@@ -10,6 +10,8 @@ mongoose.connect('mongodb://localhost/mydb');
 var app = express();
 app.use(bodyParser.urlencoded({ extended: true}));
 app.use(bodyParser.json());
+app.use(express.static(__dirname + '/public'));
+
 
 //Routes
 app.use('/api', require('./routes/api'));
